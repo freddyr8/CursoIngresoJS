@@ -3,7 +3,9 @@ y luego mostrarlo por 'alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
     var prueba;
-    prueba= prompt("Funciona?");
+
+    prueba = prompt("Funciona?x2");
+
     alert(prueba);
 }
 

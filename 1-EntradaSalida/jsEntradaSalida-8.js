@@ -10,17 +10,21 @@ function SacarResto()
     var numeroDosParseado;
     var resultado;
     
-    //obtener valores por ID
-
-    numeroUnoIngresado = document.getElementById("numeroUno").value;
-    numeroDosIngresado = document.getElementById("numeroDos").value;
+    //Obtener valores por ID
+    numeroUnoIngresado = document.getElementById("numeroDividendo").value;
+    numeroDosIngresado = document.getElementById("numeroDivisor").value;
 
     //Parseo de datos
     numeroUnoParseado = parseInt(numeroUnoIngresado);
     numeroDosParseado = parseInt(numeroDosIngresado);
-    
+
     //operación
-    resultado = (numeroUnoParseado + numeroDosParseado)
-	console.log(numeroUnoParseado)
-    console.log(numeroDosParseado)
+    resultado = numeroUnoParseado % numeroDosParseado;
+    console.log(numeroUnoParseado);
+    console.log(numeroDosParseado);
+    
+    //resultado
+    alert(resultado);
+
+    
 }

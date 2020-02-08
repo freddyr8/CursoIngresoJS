@@ -65,8 +65,8 @@ function Materiales ()
     anchoTerrenoIngresado = document.getElementById("Ancho").value;
 
     //Parseo de datos
-    largoTerrenoParseado = largoTerrenoIngresado;
-    anchoTerrenoParseado = anchoTerrenoIngresado;
+    largoTerrenoParseado = parseInt(largoTerrenoIngresado);
+    anchoTerrenoParseado = parseInt(anchoTerrenoIngresado);
 
     //Operacion
     operacion = (largoTerrenoParseado)*2 + (anchoTerrenoParseado)*2;

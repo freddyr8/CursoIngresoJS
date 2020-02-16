@@ -11,6 +11,7 @@ var numeroAleatorioUno;
 var numeroAleatorioDos;
 var random;
 var operadorMatematico;
+var respuestaUsuario;
 
 function comenzar()
 {
@@ -21,6 +22,8 @@ function comenzar()
     console.log(numeroAleatorioUno);
     console.log(numeroAleatorioDos);
     random = Math.floor(Math.random() * (4 - 1)) + 1;
+    
+    
 
 
     switch (random) {
@@ -41,18 +44,19 @@ function comenzar()
             respuesta = numeroAleatorioUno * numeroAleatorioDos;
             break;
     }
-
-
-	
+    document.getElementById("PrimerNumero").value = (numeroAleatorioUno);
+    document.getElementById("Operador").value = (operadorMatematico);
+    document.getElementById("SegundoNumero").value = (numeroAleatorioDos);
 
 }//FIN DE LA FUNCIÓN
 
 function Responder()
 {
-    document.getElementById("PrimerNumero").value = (numeroAleatorioUno);
-    document.getElementById("Operador").value = (operadorMatematico);
-    document.getElementById("SegundoNumero").value = (numeroAleatorioDos);
-    document.getElementById("Respuesta").value = (respuesta);
-    
+respuestaUsuario = document.getElementById("Respuesta").value;
 
+    if ( respuestaUsuario == respuesta) {
+        alert("Correcto!");
+    }else{
+        alert("Incorrecto!");
+        }
 }//FIN DE LA FUNCIÓN

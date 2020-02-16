@@ -34,6 +34,7 @@ var laHora = parseInt(document.getElementById('hora').value);
         case 5:
         case 6:
             alert("Es de noche.");
+            break;
         default:
             alert("la hora no existe");
             break;

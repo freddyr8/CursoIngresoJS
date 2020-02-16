@@ -7,14 +7,52 @@ y una de las cuatro operaciones básicas (suma, resta,
 se debe informar si el resultado es el correcto o no.
 */
 var respuesta;
+var numeroAleatorioUno;
+var numeroAleatorioDos;
+var random;
+var operadorMatematico;
+
 function comenzar()
 {
+    min = 1;
+    max = 11;
+    numeroAleatorioUno = Math.floor(Math.random() * (max - min)) + min;
+    numeroAleatorioDos = Math.floor(Math.random() * (max - min)) + min;
+    console.log(numeroAleatorioUno);
+    console.log(numeroAleatorioDos);
+    random = Math.floor(Math.random() * (4 - 1)) + 1;
+
+
+    switch (random) {
+        case 1:
+            operadorMatematico = "+";
+             respuesta = numeroAleatorioUno + numeroAleatorioDos;
+            break;
+        case 2:
+            operadorMatematico = "-";
+            respuesta = numeroAleatorioUno - numeroAleatorioDos;
+            break;
+        case 3:
+            operadorMatematico = "/";
+            respuesta = numeroAleatorioUno / numeroAleatorioDos;
+            break;
+        case 4:
+            operadorMatematico = "*";
+            respuesta = numeroAleatorioUno * numeroAleatorioDos;
+            break;
+    }
+
 
 	
 
 }//FIN DE LA FUNCIÓN
+
 function Responder()
 {
-	
+    document.getElementById("PrimerNumero").value = (numeroAleatorioUno);
+    document.getElementById("Operador").value = (operadorMatematico);
+    document.getElementById("SegundoNumero").value = (numeroAleatorioDos);
+    document.getElementById("Respuesta").value = (respuesta);
+    
 
 }//FIN DE LA FUNCIÓN

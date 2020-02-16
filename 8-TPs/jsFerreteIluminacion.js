@@ -15,76 +15,67 @@ function CalcularPrecio ()
     var lamparasPrecio;
     var precioDesc;
     var marca;
-    var precioFinal;
+    var preciofinal;
     var precioFinalDesc;
-    var importeFinal;
-    var ingresosBrutos;
+    var ingBruto;
+    var ingBrutoT;
+    var ingBrutoTparseado;
+    D50 = 0.5;
 
     lamparasPrecio = 35;
 
     //Ingresando datos por ID
     cantidadLamparas = document.getElementById("Cantidad").value;
     marca = document.getElementById("Marca").value;
-    precioDesc = document.getElementById("precioDescuento").value;
 
     //Parseo de datos
     cantidadLamparasPars = parseInt(cantidadLamparas);
-    
-    
+    ingBrutoTparseado = parseInt(ingBrutoT);
 
     //Operacion IFF
     if (cantidadLamparasPars >= 6) {
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.5;
+
+        preciofinal = lamparasPrecio * cantidadLamparasPars;
+        precioFinalDesc = preciofinal * D50;
         document.getElementById("precioDescuento").value = precioFinalDesc;
-    
-    }else if (cantidadLamparasPars == 5 && marca == "ArgentinaLuz"){
-            
-            precioFinal = lamparasPrecio * cantidadLamparasPars;
-            precioFinalDesc = precioFinal * 0.4;
-            document.getElementById("precioDescuento").value = precioFinalDesc;
-    
-    }else if (cantidadLamparasPars == 5 && marca != "ArgentinaLuz") {
+        if(precioFinalDesc >120){
+            ingBrutoT = resultado * 1.1;
+            ingBrutoTparseado = precioFinalDesc * 0.1;
+            document.getElementById ("precioDescuento").value = ingBrutoTparseado;
+            alert("IBB que usted pago es de $" + ingBrutoT);
+
+        }
         
+    }else{
+        if (cantidadLamparasPars == 5 && marca == "ArgentinaLuz") {
+
+        preciofinal = lamparasPrecio * cantidadLamparasPars;
+        precioFinalDesc = preciofinal * 0.4;
+        document.getElementById("precioDescuento").value = precioFinalDesc;
+        }else{
+
         precioFinal = lamparasPrecio * cantidadLamparasPars;
         precioFinalDesc = precioFinal * 0.3;
         document.getElementById("precioDescuento").value = precioFinalDesc;
-    
-    }else if (cantidadLamparasPars == 4 && ("ArgentinaLuz" || "FelipeLamparas")) {
-        
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.25;
-        document.getElementById("precioDescuento").value = precioFinalDesc;
-    
-    }else if (cantidadLamparasPars == 4 != ("ArgentinaLuz" || "FelipeLamparas")) {
-        
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.2;
-        document.getElementById("precioDescuento").value = precioFinalDesc;
-    
-    } else if (cantidadLamparasPars == 3 && "ArgentinaLuz") {
 
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.15;
-        document.getElementById("precioDescuento").value = precioFinalDesc;
+            if (cantidadLamparasPars == 4 && ("ArgentinaLuz" || "FelipeLamparas")) {
 
-    } else if (cantidadLamparasPars == 3 && "FelipeLamparas") {
+                precioFinal = lamparasPrecio * cantidadLamparasPars;
+                precioFinalDesc = precioFinal * 0.25;
+                document.getElementById("precioDescuento").value = precioFinalDesc;
+            }else{
+                precioFinal = lamparasPrecio * cantidadLamparasPars;
+                precioFinalDesc = precioFinal * 0.2;
+                document.getElementById("precioDescuento").value = precioFinalDesc;
 
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.1;
-        document.getElementById("precioDescuento").value = precioFinalDesc;
-        
-    } else if (cantidadLamparasPars == 3 != ("ArgentinaLuz" || "FelipeLamparas")) {
+                if (cantidadLamparasPars == 3 && "ArgentinaLuz") {
 
-        precioFinal = lamparasPrecio * cantidadLamparasPars;
-        precioFinalDesc = precioFinal * 0.05;
-        document.getElementById("precioDescuento").value = precioFinalDesc;
-        
-    } else if (importeFinal > 120) {
-
-        importeFinal = precioFinalDesc 
-
-    } else {
-        
+                    precioFinal = lamparasPrecio * cantidadLamparasPars;
+                    precioFinalDesc = precioFinal * 0.15;
+                    document.getElementById("precioDescuento").value = precioFinalDesc;
+                    
+                }
+            }
+        }
     }
 }

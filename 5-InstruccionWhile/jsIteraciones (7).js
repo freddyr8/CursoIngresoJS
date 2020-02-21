@@ -5,9 +5,9 @@ function mostrar()
 	var acumulador=0;
 	var respuesta=true;
 	var numero;
-	var salir = false;
+	//var salir = false;
 
-	while (true) {
+	while (respuesta == true) {
 
 		contador++;
 		numero = prompt("Ingrese un numero");
@@ -19,16 +19,12 @@ function mostrar()
 			
 			numero = prompt("ingrese un numero valido");
 			numero = parseInt(numero);
-			
-			respuesta = confirm("Desea finalizar la cuenta ahora?");
-			if (salir == true) {
-				break;
-			}
 		}
 
 		//acumulamos
 		acumulador += numero;
 		console.log(acumulador);
+		respuesta = confirm("Desea continuar?");
 		
 	}
 

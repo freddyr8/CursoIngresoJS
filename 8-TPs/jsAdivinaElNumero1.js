@@ -45,6 +45,6 @@ function verificar()
         
       }else if (numeroIngresado == numeroAleatorio) {
 
-         alert("Usted es un ganador! y solo en " + contadorIntentos);
+         alert("Usted es un ganador! y solo en " + contadorIntentos + " intentos");
         }
 }

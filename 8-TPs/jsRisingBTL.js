@@ -8,6 +8,20 @@ E.	Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.
  */
 function ComenzarIngreso () 
-{
- 
+{ 
+    //Punto A
+    var edad = prompt("Ingrese su edad(min 18 y max 90 años.)");
+    while (edad < 18 || edad > 90 || isNaN(edad)) {
+
+        edad = prompt("Error, ingrese una edad entre 18 y 90 años.");
+    }
+
+    //Punto B
+    var sexo = prompt("Ingrese su sexo, 'M' para masculino y 'F' para femenino.")
+    while (sexo.toUpperCase() != "F" && sexo.toUpperCase() != "M") {
+
+        sexo = prompt("Error, ingrese 'F' o 'M'.");
+        
+    }
+
 }

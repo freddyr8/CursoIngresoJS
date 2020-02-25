@@ -15,13 +15,47 @@ function ComenzarIngreso ()
 
         edad = prompt("Error, ingrese una edad entre 18 y 90 años.");
     }
+    document.getElementById("Edad").value = edad;
 
     //Punto B
-    var sexo = prompt("Ingrese su sexo, 'M' para masculino y 'F' para femenino.")
+    var sexo = prompt("Ingrese su sexo, 'M' para masculino y 'F' para femenino.");
     while (sexo.toUpperCase() != "F" && sexo.toUpperCase() != "M") {
 
         sexo = prompt("Error, ingrese 'F' o 'M'.");
+    }
+    document.getElementById("Sexo").value = sexo;
+
+    //Punto C
+    var estadoCivil = prompt("Ingrese un numero acorde a su estado civil: 1-Soltero. 2-Casado. 3-Divorciado. 4-Viudo.");
+    while (estadoCivil < 1 || estadoCivil > 4 || isNaN(estadoCivil)) {
+
+        estadoCivil = prompt("Error, ingrese un numero del 1 al 4 para definir su estado civil.");        
+    }
+    document.getElementById("EstadoCivil").value = estadoCivil;
+
+    //Punto D
+    var sueldoBruto = prompt("Ingrese su sueldo en bruto(Min: 8000.)");
+    while (sueldoBruto < 8000 || isNaN(sueldoBruto)) {
+
+        sueldoBruto = prompt("Error, ingrese un sueldo bruto valido mayor a 8000.");
+    }
+    document.getElementById("Sueldo").value = sueldoBruto;
+
+    //Punto E
+    var numeroDeLegajo = prompt("Ingrese su numero de legajo(4 cifras sin ceros a la izquierda).");
+    while (numeroDeLegajo < 1000 || numeroDeLegajo > 9999 || isNaN(numeroDeLegajo)) {
+
+        numeroDeLegajo = prompt("Error, ingrese un numero de legajo valido de 4 cifras sin ceros a la izquierda.");
+    }
+    document.getElementById("Legajo").value = numeroDeLegajo;
+
+    //Punto F
+    var nacionalidad = prompt("Ingrese su nacionalidad siendo: 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
+    while (nacionalidad.toUpperCase() != "A" && nacionalidad.toUpperCase() != "E" && nacionalidad.toUpperCase() != "N") {
+
+        nacionalidad = prompt("Error, ingrese 'A' (Argentinos), 'E' (Extranjeros), 'N' (Nacionalizados)");
         
     }
-
+    document.getElementById("Nacionalidad").value = nacionalidad;
+    
 }

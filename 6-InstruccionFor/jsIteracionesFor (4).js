@@ -1,5 +1,6 @@
 function mostrar()
 {
+    for (let = contador ; contador == true ; ){}
 
 
 

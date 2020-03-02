@@ -9,23 +9,63 @@ e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos
 */
 function ComenzarIngreso () 
 {
-    var numeroPositivo = document.getElementById("numero").value;
-    numeroPositivo = parseInt(numeroPositivo);
-    var contadorNumeroPare;
+           //Punto A
+        if (numero % 2 == 0) {
 
-    while (true) {
+            contadorNumerosPares++;
+        }else if(numero % 2 !== 0){
+            //Punto B
+            contadorNumeroimpares++;
+            console.log(contadorNumeroimpares);
+            console.log(contadorNumerosPares);
 
-        if(numeroPositivo % 2 == 0 ){
-            contadorNumeroPare++;
-            console.log(contadorNumeroPare);
-        }
-        
-    }
-   
+        }else if (numero == 0) {
+            //Punto C
+            contadorCeros++;
+            console.log(contadorCeros);
+
+        }else if (numero > 0) {
+            //Punto D
+            acumuladorPositivos += numero;
+            contadorPositivos++;
+            console.log(acumuladorPositivos);
+            console.log(contadorPositivos);
             
-    
+        }else if (numero < 0) {
+            //Punto E
+            acumuladorNegativos += numero;
+            console.log(acumuladorNegativos);
+            
 
-        
-    
+        }else if (bandera == true) {
+            //Punto F
+            bandera = false;
+            numeroMaximo = numero;
+            numeroMinimo = numero;
+            letraMaximo = letra;
+            letraMinimo = letra;
+            
+        }else if (numero > numeroMaximo) {
+
+            numeroMaximo = numero;
+            letraMaximo = letra;
+            console.log(numeroMaximo);
+            console.log(letraMaximo);
+            
+        }else if (numero < numeroMinimo) {
+
+            numeroMinimo = numero;
+            letraMinimo = letra;
+            console.log(numeroMinimo);
+            console.log(letraMinimo);
+            
+            //Punto D
+        }if (acumuladorPositivos > 0) {
+
+            promedioPositivos = acumuladorPositivos / contadorPositivos;
+            
+        }else {
+            promedioPositivos = "No ingreso ningun positivo.";
+        }
  	
 }

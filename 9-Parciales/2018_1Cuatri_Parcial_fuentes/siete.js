@@ -20,11 +20,13 @@ function mostrar()
         //Validar datos
         do {
             var notas = prompt("Ingrese la nota del alumno");
-            notas = parseInt(notas);
 
             if (notas == null) {
                 break; 
             }
+
+            notas = parseInt(notas);
+
              
         } while (isNaN(notas) || notas < 0 || notas > 10);
         
@@ -68,7 +70,7 @@ function mostrar()
         promedio = acumuladorDeNotas / 5;
         
     }else {
-        prometio = "No ingreso ningun producto.";
+        promedio = "No ingreso ningun producto.";
     }
    
 

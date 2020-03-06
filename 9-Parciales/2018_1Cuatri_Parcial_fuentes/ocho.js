@@ -43,7 +43,7 @@ function mostrar()
     } while (isNaN(numero) || numero < -100 || numero > 100);
 
     //Punto A y B
-    if (numero % 2 == 0) {
+    if (numero % 2 == 0 && numero !=0) {
          
         contadorNumerosPares++;
     }else{
